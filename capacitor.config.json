@@ -1,0 +1,8 @@
+{
+  "appId": "tw.chongde.generalhr.erp",
+  "appName": "崇德總務人力ERP",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
