@@ -7,7 +7,13 @@
   --muted: #64748b;
   --border: #e2e8f0;
   --danger: #b91c1c;
+  --danger-bg: #fef2f2;
+  --danger-border: #fecaca;
+  --warn: #b45309;
+  --warn-bg: #fffbeb;
+  --warn-border: #fde68a;
   --success: #15803d;
+  --success-bg: #f0fdf4;
 }
 
 * {
@@ -79,6 +85,53 @@ body {
   padding: 16px;
 }
 
+/* 介面上方警示橫幅 */
+.alert-area {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.alert-banner {
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.alert-danger {
+  background: var(--danger-bg);
+  border-color: var(--danger-border);
+  color: var(--danger);
+}
+
+.alert-warn {
+  background: var(--warn-bg);
+  border-color: var(--warn-border);
+  color: var(--warn);
+}
+
+.alert-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.alert-link {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .toolbar {
   display: flex;
   gap: 10px;
@@ -144,7 +197,22 @@ body {
 .item-meta {
   font-size: 0.86rem;
   color: var(--muted);
-  line-height: 1.45;
+  line-height: 1.5;
+}
+
+.member-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.member-pill {
+  background: #f1f5f9;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 0.8rem;
 }
 
 .badge {
@@ -159,13 +227,18 @@ body {
 }
 
 .badge-warn {
-  background: #fef2f2;
+  background: var(--danger-bg);
   color: var(--danger);
 }
 
 .badge-ok {
-  background: #f0fdf4;
+  background: var(--success-bg);
   color: var(--success);
+}
+
+.badge-info {
+  background: #eff6ff;
+  color: #1d4ed8;
 }
 
 .item-actions {
@@ -206,7 +279,7 @@ body {
 .btn-danger {
   background: #fff;
   color: var(--danger);
-  border-color: #fecaca;
+  border-color: var(--danger-border);
 }
 
 .modal-backdrop {
@@ -227,7 +300,7 @@ body {
 .modal {
   background: #fff;
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -251,7 +324,7 @@ body {
 
 .modal-body {
   padding: 16px 18px;
-  max-height: 70vh;
+  max-height: 72vh;
   overflow-y: auto;
   display: grid;
   gap: 12px;
@@ -272,6 +345,36 @@ body {
   border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 0.95rem;
+}
+
+.checkbox-list {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  max-height: 180px;
+  overflow-y: auto;
+  display: grid;
+  gap: 6px;
+  background: #fafafa;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.helper-text {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 4px;
 }
 
 .icon-btn {
