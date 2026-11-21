@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>崇德總務人力 ERP</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>崇德總務人力 ERP</h1>
+      <p class="subtitle">物資庫存・採買調度・人力班表（CRUD 管理）</p>
+    </div>
+    <div class="header-actions">
+      <button id="btnExport" class="btn btn-light">匯出備份</button>
+      <label class="btn btn-light">
+        匯入備份
+        <input type="file" id="fileImport" accept=".json" hidden />
+      </label>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="inventory">物資庫存</button>
+    <button class="tab-btn" data-tab="requisitions">採買與調度單</button>
+    <button class="tab-btn" data-tab="shifts">總務人力班表</button>
+    <button class="tab-btn" data-tab="logs">操作紀錄 Log</button>
+  </nav>
+
+  <main class="container">
+    <section class="toolbar">
+      <input type="text" id="searchInput" placeholder="搜尋關鍵字（名稱、編號、組別、人員）..." />
+      <button id="btnAdd" class="btn btn-primary">+ 新增資料</button>
+    </section>
+
+    <section id="summaryBar" class="summary-bar"></section>
+
+    <section id="contentArea"></section>
+  </main>
+
+  <!-- 新增 / 修改 Modal -->
+  <div id="modalBackdrop" class="modal-backdrop hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">新增資料</h2>
+        <button id="btnCloseModal" class="icon-btn">&times;</button>
+      </div>
+      <form id="crudForm" class="modal-body"></form>
+      <div class="modal-footer">
+        <button type="button" id="btnCancelModal" class="btn btn-light">取消</button>
+        <button type="submit" form="crudForm" class="btn btn-primary">儲存</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
