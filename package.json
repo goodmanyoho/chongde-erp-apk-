@@ -1,0 +1,16 @@
+{
+  "name": "chongde-general-hr-erp",
+  "version": "1.0.0",
+  "description": "發一崇德道場總務與人力調度 ERP (Android APK)",
+  "main": "www/index.html",
+  "scripts": {
+    "build": "echo 'Static www ready'"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/android": "^6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  }
+}
